@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+    <Properties>
+        <Property name="filename">test-results/logs/demoblaze-automation.log</Property>
+        <Property name="pattern">%style{[%date{yyyy-MMM-dd HH:mm:ss zzz}]}{yellow} %style{[%5class{1}.%method]}{bright_blue} %msg%n</Property>
+        <Property name="reportLogPattern">%style{[%date{yyyy-MMM-dd HH:mm:ss zzz}]}{yellow} %style{[%logger]}{bright_blue} %msg%n</Property>
+    </Properties>
+    <ThresholdFilter level="DEBUG" />
+    <Appenders>
+        <Console name="STDOUT">
+            <PatternLayout disableAnsi="false">
+                    <MarkerPatternSelector defaultPattern="${pattern}">
+                        <PatternMatch key="ReportLog" pattern="${reportLogPattern}"> </PatternMatch>
+                    </MarkerPatternSelector>
+            </PatternLayout>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Root level="DEBUG">
+            <AppenderRef ref="STDOUT" />
+        </Root>
+    </Loggers>
+</Configuration>
