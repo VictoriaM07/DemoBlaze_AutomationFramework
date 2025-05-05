@@ -1,3 +1,6 @@
+package selenium_tests;
+
+import data.Constants;
 import data.SuccessMessages;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -15,7 +18,7 @@ Logger log = LogManager.getLogger(LoginTest.class);
         HomePage homePage = new HomePage(driver);
         homePage.clickLoginButton();
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.inputUsername();
+        loginPage.inputUsername(Constants.USERNAME);
         loginPage.inputPassword();
         loginPage.clickLoginButton();
         String actualMessage = homePage.getNameOfUser();

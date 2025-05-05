@@ -21,6 +21,9 @@ public class HomePage extends BasePage {
     @FindBy(css = "#login2")
     WebElement loginButton;
 
+    @FindBy(css = "#logout2")
+    WebElement logoutButton;
+
     @FindBy(css = "a[onclick=\"byCat('phone')\"]")
     WebElement phoneCategory;
 
@@ -67,6 +70,20 @@ public class HomePage extends BasePage {
             log.error("Error: Login button cannot be clicked ");
             throw new RuntimeException(e);
         }
+    }
+
+    public void checkWelcomeMessage() {
+        String actualMessage = getNameOfUser();
+        try {
+            assert actualMessage.contains("Welcome");
+            log.info("User succesfully log in");
+        } catch (Exception e) {
+            log.error("Error: Invalid username");
+        }
+    }
+
+    public void clickLogoutButton() {
+        logoutButton.click();
     }
 
     public void selectPhonesCategory() {

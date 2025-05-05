@@ -15,10 +15,10 @@ public class LoginPage extends BasePage {
     Logger log = LogManager.getLogger(LoginPage.class);
 
     @FindBy(css = "#loginusername")
-    WebElement username;
+    WebElement usernameField;
 
     @FindBy(css = "#loginpassword")
-    WebElement password;
+    WebElement passwordField;
 
     @FindBy(xpath = "//button[@onclick='logIn()']")
     WebElement loginButton;
@@ -27,12 +27,12 @@ public class LoginPage extends BasePage {
         super(driver);
     }
 
-    public void inputUsername() {
+    public void inputUsername(String name) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         try {
-            wait.until(ExpectedConditions.visibilityOf(username));
-            username.sendKeys(Constants.USERNAME);
-            log.info("Insert username in the username field");
+            wait.until(ExpectedConditions.visibilityOf(usernameField));
+            usernameField.sendKeys(name);
+            log.info("Insert username {} in the username field", name);
         } catch (Exception e) {
             log.error("Error: Username cannot be inserted");
             throw new RuntimeException(e);
@@ -40,7 +40,7 @@ public class LoginPage extends BasePage {
     }
 
     public void inputPassword() {
-        password.sendKeys(Constants.PASSWORD);
+        passwordField.sendKeys(Constants.PASSWORD);
     }
 
     public void clickLoginButton() {

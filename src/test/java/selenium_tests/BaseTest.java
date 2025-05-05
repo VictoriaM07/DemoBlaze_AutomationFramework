@@ -1,3 +1,5 @@
+package selenium_tests;
+
 import data.Constants;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

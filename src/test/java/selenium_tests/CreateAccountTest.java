@@ -1,3 +1,5 @@
+package selenium_tests;
+
 import data.SuccessMessages;
 import org.testng.Assert;
 import org.testng.annotations.Test;

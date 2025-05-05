@@ -1,4 +1,7 @@
+package selenium_tests;
+
 import data.Colors;
+import data.Constants;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import page.objects.HomePage;
@@ -13,7 +16,7 @@ public class ColorTest extends BaseTest {
         HomePage homePage = new HomePage(driver);
         homePage.clickLoginButton();
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.inputUsername();
+        loginPage.inputUsername(Constants.USERNAME);
         loginPage.inputPassword();
         loginPage.clickLoginButton();
         homePage.selectPhonesCategory();
@@ -29,7 +32,7 @@ public class ColorTest extends BaseTest {
         HomePage homePage = new HomePage(driver);
         homePage.clickLoginButton();
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.inputUsername();
+        loginPage.inputUsername(Constants.USERNAME);
         loginPage.inputPassword();
         loginPage.clickLoginButton();
         homePage.selectPhonesCategory();
@@ -42,7 +45,7 @@ public class ColorTest extends BaseTest {
         HomePage homePage = new HomePage(driver);
         homePage.clickLoginButton();
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.inputUsername();
+        loginPage.inputUsername(Constants.USERNAME);
         loginPage.inputPassword();
         loginPage.clickLoginButton();
         Wait.waitInSeconds(1);
